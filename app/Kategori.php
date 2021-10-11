@@ -9,7 +9,7 @@ class Kategori extends Model
     protected $table='kategori';
     protected $primaryKey='id';
     public  $timestamps = false;
-    protected $fillable=array('id','nama_kategori','gambar');
+    protected $fillable=array('id','nama_kategori','deskripsi_kategori','gambar','gambar_kategori');
 
     
 }

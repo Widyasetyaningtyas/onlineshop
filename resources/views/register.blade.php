@@ -46,6 +46,14 @@
                         <label for=""><strong>Konfirmasi Password</strong></label>
                         <input type="password" name="password_confirmation" class="form-control" placeholder="Password">
                     </div>
+                    <div class="form-group">
+                        <label for=""><strong>No Hp</strong></label>
+                        <input type="number" name="no_hp" class="form-control" placeholder="No Hp">
+                    </div>
+                    <div class="form-group">
+                        <label for=""><strong>Alamat</strong></label>
+                        <input type="text" name="alamat" class="form-control" placeholder="Alamat">
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary btn-block">Register</button>

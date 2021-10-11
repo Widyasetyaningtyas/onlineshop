@@ -2,15 +2,16 @@
 <html>
 <head>
 	<title>ARBREDESIGNCO | SHOP</title>
+
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-starter.css">
+  <!-- Template CSS -->
+  <link href="//fonts.googleapis.com/css?family=Oswald:300,400,500,600&display=swap" rel="stylesheet">
+  <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900&display=swap" rel="stylesheet">
 </head>
-		<meta charset="utf-8">
-		  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		  <title>ARBRE DESIGN CO</title>
-		  <!-- Template CSS -->
-		  <link rel="stylesheet" href="assets/css/style-starter.css">
-		  <!-- Template CSS -->
-		  <link href="//fonts.googleapis.com/css?family=Oswald:300,400,500,600&display=swap" rel="stylesheet">
-		  <link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900&display=swap" rel="stylesheet">
+		
 <body>
 	<div class="w3l-ecommerce-main">
 		
@@ -29,32 +30,23 @@
 									<img class="pic-1 img-fluid" src="{{$data->gambar1}}">
 									<img class="pic-2 img-fluid" src="{{$data->gambar2}}">
 								</a>
-								<ul class="social">
-										<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-
-										<li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
-										</li>
-								</ul>
+								
 								<div class="transmitv single-item">
-								<form action="#" method="post">
-										<input type="hidden" name="cmd" value="_cart">
-										<input type="hidden" name="add" value="{{$data->id}}">
-										<input type="hidden" name="transmitv_item" value="{{$data->nama_barang}}">
-										<input type="hidden" name="amount" value="{{$data->harga}}">
-										<button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
-											Add to Cart
-										</button>
-									</form>
+								
+										<a href="{{ url('pesan', $data->id) }}">
+											<button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart">
+												Add to Cart
+											</button>
+										</a>
 								</div>
 							</div>
 							<div class="product-content">
 								<h3 class="title"><a href="#">{{$data->nama_barang}}</a></h3>
-								<span class="price">Rp. {{number_format($data->harga)}}</span>
+								<span class="price">Rp. {{ number_format($data->harga)}}</span>
 							</div>
 						</div>
 					</div>
 					@endforeach
-				</div>
 				<!-- //row-->
 			</div>
 		</div>

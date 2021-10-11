@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Request;
-use DB;
+use Illuminate\Http\Request;
 use App\Kategori;
 use App\Product;
 
@@ -16,14 +15,9 @@ class MugController extends Controller
      */
     public function index()
     {
-        $data['query']= DB::table('kategori')
-            ->join('product','product.kategori_id','=','kategori.id')
-            ->select('product.id','product.nama_barang','product.harga','product.gambar1','product.gambar2','kategori.nama_kategori','kategori.deskripsi_kategori')
-            
-            ->where('product.kategori_id','=','1')
-
-            ->get();
-        return view("coke.index",$data);
+        $kategori = Kategori::orderBy('id', 'asc')->limit(1)->get();
+        $product = Product::orderBy('id', 'asc')->limit(4)->get();
+        return view('mug.index', ['kategori' => $kategori, 'product' => $product]);
     }
 
     /**

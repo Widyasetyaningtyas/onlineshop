@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kategori;
-use App\Product;
+use Illuminate\Support\Facades\Hash;
+use Auth;
+use App\User;
 
-class CokeController extends Controller
+class ProfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,8 @@ class CokeController extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::orderBy('id', 'desc')->limit(1)->get();
-        $product = Product::orderBy('id', 'desc')->limit(4)->get();
-        return view('coke.index', ['kategori' => $kategori, 'product' => $product]);
+        $user = User::where('id', Auth::user()->id)->first();
+        return view('profil.index', compact('user'));
     }
 
     /**
@@ -25,6 +25,26 @@ class CokeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, ['password' => 'confirmed',
+    ]);
+
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->no_hp = $request->no_hp;
+        $user->alamat = $request->alamat;
+        
+        if (!empty($request->password)) 
+        {
+            $user->password = Hash::make($request->password);
+        }
+        $user->update();
+        return redirect()->route('home');
+    }
+
     public function create()
     {
         //
@@ -70,10 +90,7 @@ class CokeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+   
 
     /**
      * Remove the specified resource from storage.

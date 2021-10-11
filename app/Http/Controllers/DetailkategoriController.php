@@ -3,22 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kategori;
 use App\Product;
+use App\Kategori;
 
-class CokeController extends Controller
+class DetailkategoriController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $kategori = Kategori::orderBy('id', 'desc')->limit(1)->get();
-        $product = Product::orderBy('id', 'desc')->limit(4)->get();
-        return view('coke.index', ['kategori' => $kategori, 'product' => $product]);
+        // $kategori = Kategori::where('id', $id)->first();
+        // $product = Product::get();
+        // return view('detail_kategori.index', ['kategori'=>$kategori, 'product'=>$product]);
+        $kategori = Kategori::where('id', $id)->first();
+        $product = Product::where('kategori_id', $id)->get();
+        return view('detail_kategori.index', ['kategori' => $kategori, 'product' => $product]);
+        // return view('detail_kategori.index', compact('kategori', 'product'));  
     }
+
+
+    // public function product($kategori_id)
+    // {
+    //     $product = Product::where('product.kategori_id', $kategori_id);
+    //     return $product->get()->result();
+    // }
 
     /**
      * Show the form for creating a new resource.

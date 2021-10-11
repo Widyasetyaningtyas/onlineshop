@@ -14,7 +14,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        $data['shop']= Product::get();
+        $data['product']= Product::get();
         return view('shop.index',$data);
     }
 

@@ -12,18 +12,18 @@
 				<p class="mb-4 text-center">Handpicked Favourites just for you</p>
 				<div class="welcome-grids row mt-5">
 					@foreach ($kategori as $data)
-					<div class="col-md-1 col-1 welcome-image"></div>
-					<div class="col-lg-4 col-md-4 col-4 welcome-image">
+					<div class="col-lg-1 col-md-1 col-sm-1 col-1 welcome-image"></div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-4 welcome-image">
 						<div class="boxhny13">
-								<a href="">
-										<img src="{{$data->gambar}}" class="img-fluid" alt="" />
+							<a href="{{ url('detail_kategori')}}/{{ $data->id }}">
+								<img src="{{$data->gambar}}" class="img-fluid" alt="" />
 								<div class="boxhny-content">
-									<a href=""><h3 class="title">{{$data->nama_kategori}}</h3></a>
+									<a href="{{ url('detail_kategori')}}/{{ $data->id }}"><h3 class="title">{{$data->nama_kategori}}</h3></a>
 								</div>
 							</a>
 						</div>
 					</div>
-					<div class="col-md-2 col-2 welcome-image"></div>
+					<div class="col-lg-1 col-md-1 col-sm-1 col-1  welcome-image"></div>
 					@endforeach
 				</div>
 

@@ -19,15 +19,7 @@
 </head>
 <body>
 <!--w3l-banner-slider-main-->
-<div class="container">
-          <div class="col-md-12 mt-5">
-              <div class="card">
-                  <div class="card-body">
-                      <a href="{{ route('logout') }}" class="btn btn-danger">Logout</a>
-                  </div>
-              </div>
-          </div>
-      </div>
+
   <div class="w3l-banner-slider-main">
     <div class="top-header-content">
       <header class="tophny-header">
@@ -38,15 +30,21 @@
             <!--//left-->
             <!--/right-->
             <ul class="top-hnt-right-content col-lg-12">
-
-              <li class="button-log usernhy">
-                <a class="btn-open" href="{{url('login')}}">
-                  <span class="fa fa-user" aria-hidden="true"></span>
+              @if(empty(Auth::user()->id))
+              <li class="transmitvcart galssescart2 cart cart box_1">
+                <a class="last" href="{{url('login')}}">
+                  <button class="top_transmitv_cart">
+                    Login 
+                    <span class="fa fa-user"></span>
+                  </button>
                 </a>
               </li>
+              @endif
               <li class="transmitvcart galssescart2 cart cart box_1">
-                <?php
-                  $notif = \App\Keranjang::where('user_id', Auth::user()->id)->where('status',0)->first()->count();
+
+                <?php 
+                  $notif = \App\Keranjang::where('user_id', Auth::user()->id)->where('status',0)->get()->count();
+                
                 ?>
                 <a href="{{url('check_out')}}" class="last">
                   <button class="top_transmitv_cart" type="submit" name="submit" value="">
@@ -102,18 +100,27 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{url('shop')}}">Shop</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">What We Offer</a>
-                  </li>
 
-
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="dropdownSubMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contact</a>
+                  <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border- shadow" style="opacity: 0.6">
+                    <li><a href="https://www.instagram.com/arbredesign.co" class="dropdown-item" target="blank">Instagram</a></li>
+                    <li><a href="https://shopee.co.id/arbredesignco" class="dropdown-item" target="blank">Shopee</a></li>
+                    <li><a href="https://www.tokopedia.com/arbredesignco" class="dropdown-item" target="blank">Toko Pedia</a></li>
+                  </ul>
                   <!-- <ul class="nav-link isi-dropdown" style="list-style: none;">
                     <li><a class="nav-link" href="https://www.instagram.com/arbredesign.co/" target="blank">Instagram</a></li>
                     <li><a class="nav-link" href="https://shopee.co.id/arbredesignco" target="blank">Shopee</a></li>
                     <li><a class="nav-link" href="https://www.tokopedia.com/arbredesignco" target="blank">Toko Pedia</a></li>
                   </ul> -->
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="dropdownSubMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
+                  <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="opacity: 0.6">
+                    <li><a href="{{ url('profil') }}" class="dropdown-item">Profil</a></li>
+                    <li><a href="{{ url('history') }}" class="dropdown-item">History</a></li>
+                    <li><a href="{{ route('logout') }}" class="dropdown-item">Logout</a></li>
+                  </ul>
                 </li>
               </ul>
 

@@ -72,7 +72,9 @@ class AuthController extends Controller
         $rules = [
             'name'                  => 'required|min:3|max:35',
             'email'                 => 'required|email|unique:users,email',
-            'password'              => 'required|confirmed'
+            'password'              => 'required|confirmed',
+            'no_hp'                 => 'required',
+            'alamat'                => 'required'
         ];
  
         $messages = [
@@ -97,6 +99,8 @@ class AuthController extends Controller
         $user->email = strtolower($request->email);
         $user->password = Hash::make($request->password);
         $user->email_verified_at = \Carbon\Carbon::now();
+        $user->no_hp = ucwords(strtolower($request->no_hp));
+        $user->alamat = ucwords(strtolower($request->alamat));
         $simpan = $user->save();
  
         if($simpan){
@@ -111,7 +115,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout(); // menghapus session yang aktif
-        return redirect()->route('login');
+        return redirect()->route('home');
     }
  
  

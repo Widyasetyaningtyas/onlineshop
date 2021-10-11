@@ -30,5 +30,18 @@ class HomeController extends Controller
     	$search = Product::where('nama_barang','like','%'.$request->search."%")->paginate(2);
     	return view('home',['product'=>$search]);
     }
+
+    public $search;
+
+    protected $updateQueryString = ['search'];
+
+    public function render()
+    {
+        if($this->search) {
+            $product = Product::where('nama','like','%'.$this->search.'%');
+        }else{
+
+        }
+    }
     
 }

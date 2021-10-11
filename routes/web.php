@@ -44,3 +44,18 @@ Route::get('logout', 'AuthController@logout')->name('logout');
 Route::get('pesan/{id}','PesanController@index');
 Route::post('pesan/{id}','PesanController@pesan')->name('pesan');
 Route::get('check_out','PesanController@check_out');
+Route::get('/check_out/destroy/{id}','PesanController@destroy');
+
+Route::get('detail_kategori/{id}','DetailkategoriController@index');
+
+Route::get('konfirmasi-check-out', 'PesanController@konfirmasi');
+
+Route::get('/profil','ProfilController@index');
+Route::post('/profil/update/{id}','ProfilController@update');
+
+Route::get('history','HistoryController@index');
+Route::get('history/{id}','HistoryController@detail');
+
+Route::get('/show/{id}','PesanController@show');
+Route::get('/edit/{id}','PesanController@edit')->name('edit');
+Route::get('/read','PesanController@read');

@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Kategori;
 use App\Product;
-
-class CokeController extends Controller
+use App\Keranjang;
+use App\Checkout;
+use App\User;
+use Auth;
+class HistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +17,7 @@ class CokeController extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::orderBy('id', 'desc')->limit(1)->get();
-        $product = Product::orderBy('id', 'desc')->limit(4)->get();
-        return view('coke.index', ['kategori' => $kategori, 'product' => $product]);
+        //
     }
 
     /**

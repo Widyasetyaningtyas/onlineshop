@@ -72,15 +72,41 @@ class PesanController extends Controller
 
     }
 
-    public function check_out()
+    public function check_out(Request $request)
     {
         $query= DB::table('keranjang')
             ->join('product','product.id','=','keranjang.product_id')
-            ->select('product.nama_barang','keranjang.jumlah','product.harga','keranjang.jumlah_harga')->get();
+            ->select('keranjang.id','product.nama_barang','product.gambar1','keranjang.jumlah','product.harga','keranjang.jumlah_harga')
+            ->where('keranjang.user_id', Auth::user()->id)
+            ->where('status',0)
+            ->get();
 
-        $keranjang = Keranjang::where('user_id', Auth::user()->id)->where('status',0)->first()->get();
-        return view('pesan.check_out', compact('keranjang', 'query'));
+        
+        return view('pesan.check_out', compact('query'));
     }
+
+    // public function delete($id)
+    // {
+    //     return "delete";
+    // }
+
+    public function konfirmasi()
+    {
+        $query= DB::table('keranjang')
+            ->join('product','product.id','=','keranjang.product_id')
+            ->select('keranjang.id','product.nama_barang','product.gambar1','keranjang.jumlah','product.harga','keranjang.jumlah_harga','keranjang.status')
+            ->where('keranjang.user_id', Auth::user()->id)
+            ->where('status',0)
+            ->get();
+
+
+        $query->status = 1;
+        $query->update();
+
+        return redirect('pesan.check_out');
+    }
+
+
 
     public function create()
     {
@@ -104,10 +130,11 @@ class PesanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    // public function show($id)
+    // {
+    //     $data = Keranjang::findOrFail($id);
+    //     return view('edit')->with(['data' => $data]);
+    // }
 
     /**
      * Show the form for editing the specified resource.
@@ -115,9 +142,20 @@ class PesanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+
+    public function read()
     {
-        //
+        $data = Keranjang::all();
+        return view('check_out')->with(['data' => $data]);
+    }
+
+
+    public function show(Request $request, $id)
+    {
+        $keranjang=  Keranjang::find($id);
+        $keranjang->fill($request->all());
+        $keranjang->update();
+        return redirect('check_out');
     }
 
     /**
@@ -129,7 +167,7 @@ class PesanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -140,6 +178,7 @@ class PesanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $keranjang = Keranjang::find($id)->delete();
+        return redirect('check_out');
     }
 }

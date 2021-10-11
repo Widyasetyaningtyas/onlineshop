@@ -9,7 +9,7 @@ class Product extends Model
     protected $table='product';
     protected $primaryKey='id';
     public  $timestamps = false;
-    protected $fillable=array('id','nama_barang','deskripsi','harga','stok','berat','gambar','gambar2');
+    protected $fillable=array('id','kategori_id','nama_barang','deskripsi','harga','stok','berat','gambar1','gambar2');
 
     
 }
