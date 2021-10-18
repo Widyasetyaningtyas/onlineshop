@@ -31,12 +31,15 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"ID","name"=>"id"];
-			$this->col[] = ["label"=>"ID Customer","name"=>"customer_id","join"=>"customer,id"];
-			$this->col[] = ["label"=>"Waktu Bayar","name"=>"waktu_bayar"];
-			$this->col[] = ["label"=>"Total","name"=>"total"];
+			$this->col[] = ["label"=>"Full Name","name"=>"fullname"];
+			$this->col[] = ["label"=>"Nama Barang","name"=>"nama_barang"];
+			$this->col[] = ["label"=>"Harga","name"=>"harga"];
+			$this->col[] = ["label"=>"Jumlah","name"=>"jumlah"];
+			$this->col[] = ["label"=>"Jumlah Harga","name"=>"jumlah_harga"];
 			$this->col[] = ["label"=>"Metode","name"=>"metode"];
 			$this->col[] = ["label"=>"Ongkir","name"=>"ongkir"];
-			$this->col[] = ["label"=>"Alamat","name"=>"alamat"];
+			$this->col[] = ["label"=>"Total","name"=>"total"];
+			$this->col[] = ["label"=>"Alamat Rumah","name"=>"alamat_rumah"];
 			$this->col[] = ["label"=>"Status","name"=>"status"];
 			$this->col[] = ["label"=>"Bukti Pembayaran","name"=>"bukti_pembayaran","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -44,27 +47,41 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'ID Checkout','name'=>'id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'ID Customer','name'=>'customer_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'customer,nama'];
-			$this->form[] = ['label'=>'Waktu Bayar','name'=>'waktu_bayar','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Full Name','name'=>'fullname','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Nama Barang','name'=>'nama_barang','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah_harga','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Metode','name'=>'metode','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Ongkir','name'=>'ongkir','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Provinsi','name'=>'provinsi','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Kabupaten','name'=>'kabupaten','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Kecamatan','name'=>'kecamatan','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Alamat Rumah','name'=>'alamat_rumah','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Bukti Pembayaran','name'=>'bukti_pembayaran','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Waktu Bayar','name'=>'waktu_bayar','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Bukti Pembayaran','name'=>'bukti_pembayaran','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'ID Checkout','name'=>'id_checkout','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'ID Customer','name'=>'id_customer','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'customer,nama'];
-			//$this->form[] = ['label'=>'Waktu Bayar','name'=>'waktu_bayar','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Total','name'=>'total','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID Checkout','name'=>'id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Full Name','name'=>'fullname','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Nama Barang','name'=>'nama_barang','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah_harga','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
 			//$this->form[] = ['label'=>'Metode','name'=>'metode','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Ongkir','name'=>'ongkir','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Total','name'=>'total','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Provinsi','name'=>'provinsi','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Kabupaten','name'=>'kabupaten','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Kecamatan','name'=>'kecamatan','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Alamat Rumah','name'=>'alamat_rumah','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			//$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Bukti Pembayaran','name'=>'bukti_pembayaran','type'=>'upload','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Waktu Bayar','name'=>'waktu_bayar','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Bukti Pembayaran','name'=>'bukti_pembayaran','type'=>'upload','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 

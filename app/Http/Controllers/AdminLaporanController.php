@@ -13,52 +13,50 @@
 			$this->title_field = "id";
 			$this->limit = "20";
 			$this->orderby = "id,desc";
-			$this->global_privilege = false;
+			$this->global_privilege = true;
 			$this->button_table_action = true;
 			$this->button_bulk_action = true;
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
 			$this->button_edit = true;
 			$this->button_delete = true;
+			$this->button_print = true;
 			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
-			$this->button_import = false;
-			$this->button_export = false;
+			$this->button_import = true;
+			$this->button_export = true;
 			$this->table = "laporan";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"ID Laporan","name"=>"id"];
-			$this->col[] = ["label"=>"ID Cutomer","name"=>"cutomer_id"];
-			$this->col[] = ["label"=>"ID Product","name"=>"product_id"];
-			$this->col[] = ["label"=>"ID Keranjang","name"=>"keranjang _id"];
-			$this->col[] = ["label"=>"ID Checkout","name"=>"checkout_id"];
-			$this->col[] = ["label"=>"Tanggal","name"=>"tanggal"];
+			$this->col[] = ["label"=>"ID User","name"=>"user_id"];
 			$this->col[] = ["label"=>"Nama Barang","name"=>"nama_barang"];
+			$this->col[] = ["label"=>"Jumlah","name"=>"jumlah"];
+			$this->col[] = ["label"=>"Total","name"=>"total"];
+			$this->col[] = ["label"=>"Tanggal","name"=>"tanggal"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'ID Laporan','name'=>'id','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Cutomer Id','name'=>'cutomer_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Product Id','name'=>'product_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Keranjang  Id','name'=>'keranjang _id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Checkout Id','name'=>'checkout_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Tanggal','name'=>'tanggal','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID User','name'=>'user_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Nama Barang','name'=>'nama_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Tanggal','name'=>'tanggal','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'ID Laporan','name'=>'id','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			//$this->form[] = ['label'=>'Cutomer Id','name'=>'cutomer_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Product Id','name'=>'product_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Keranjang  Id','name'=>'keranjang _id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Checkout Id','name'=>'checkout_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Tanggal','name'=>'tanggal','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID User','name'=>'user_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Nama Barang','name'=>'nama_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Total','name'=>'total','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Tanggal','name'=>'tanggal','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
@@ -328,6 +326,30 @@
 	    | 
 	    */
 	    public function hook_after_delete($id) {
+	        //Your code here
+
+	    }
+
+	     /* 
+	    | ---------------------------------------------------------------------- 
+	    | Hook for execute command after delete public static function called
+	    | ----------------------------------------------------------------------     
+	    | @id       = current id 
+	    | 
+	    */
+	    public function hook_before_print($id) {
+	        //Your code here
+
+	    }
+
+	    /* 
+	    | ---------------------------------------------------------------------- 
+	    | Hook for execute command after delete public static function called
+	    | ----------------------------------------------------------------------     
+	    | @id       = current id 
+	    | 
+	    */
+	    public function hook_after_print($id) {
 	        //Your code here
 
 	    }

@@ -67,12 +67,12 @@
                   <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
                 </a> -->
             <!--/search-right-->
-            <div class="search-right">
+            <!-- <div class="search-right">
 
               <a href="#search" title="search"><span class="fa fa-search mr-2" aria-hidden="true"></span>
-                <span class="search-text">Search here</span></a>
+                <span class="search-text">Search here</span></a> -->
               <!-- search popup -->
-              <div id="search" class="pop-overlay">
+              <!-- <div id="search" class="pop-overlay">
                 <div class="popup">
 
                   <form action="/search" method="GET" class="search-box">
@@ -83,9 +83,9 @@
 
                 </div>
                 <a class="close" href="#">×</a>
-              </div>
+              </div> -->
               <!-- /search popup -->
-            </div>
+            <!-- </div> -->
             <!--//search-right-->
             <button class="navbar-toggler" type="button" data-toggle="collapse"
               data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -118,7 +118,12 @@
                   <a class="nav-link" href="#" id="dropdownSubMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }}</a>
                   <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow" style="opacity: 0.6">
                     <li><a href="{{ url('profil') }}" class="dropdown-item">Profil</a></li>
-                    <li><a href="{{ url('history') }}" class="dropdown-item">History</a></li>
+                    <li>
+                      <?php 
+                        $notif = \App\Checkout::where('user_id', Auth::user()->id)->get()->count();
+                      
+                      ?>
+                      <a href="{{ url('history') }}" class="dropdown-item">History<sup><span class="badge badge">{{ $notif }}</span></sup></a></li>
                     <li><a href="{{ route('logout') }}" class="dropdown-item">Logout</a></li>
                   </ul>
                 </li>

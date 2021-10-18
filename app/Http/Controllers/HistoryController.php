@@ -15,9 +15,14 @@ class HistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $checkout = Checkout::where('user_id', Auth::user()->id)->get();
+        // $checkout->bukti_pembayaran = $request->bukti_pembayaran;
+        // $checkout->save();
+        return view('history.index', compact('checkout'));
+        // $data['keranjang']=Keranjang::find($id);
+        // return view('history.index',$data);
     }
 
     /**
@@ -38,7 +43,26 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = Product::where('id',$id)->first();
+
+        $checkout = new Checkout;
+        $checkout->user_id = Auth::user()->id;
+        $checkout->fullname = $request->fullname;
+        $checkout->provinsi = $request->provinsi;
+        $checkout->kabupaten = $request->kabupaten;
+        $checkout->kecamatan = $request->kecamatan;
+        $checkout->alamat_rumah = $request->alamat_rumah;
+        $checkout->no_hp = $request->no_hp;
+        $checkout->metode = $request->metode;
+        $checkout->nama_barang = $request->input_nama_barang;
+        $checkout->harga = $request->input_harga;
+        $checkout->ongkir = $request->input_ongkir;
+        $checkout->status = "Belum Bayar";
+        $checkout->jumlah = $request->input_jumlah;
+        $checkout->jumlah_harga = $request->input_jumlah_harga;
+        $checkout->total = $request->input_total;
+        $checkout->save();
+        return redirect('history');
     }
 
     /**
@@ -60,7 +84,8 @@ class HistoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['checkout']= Checkout::find($id);
+        return view('history.detail_history',$data);
     }
 
     /**
@@ -72,7 +97,10 @@ class HistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $checkout=  Checkout::find($id);
+        $checkout->fill($request->all());
+        $checkout->update();
+        return redirect('history');
     }
 
     /**

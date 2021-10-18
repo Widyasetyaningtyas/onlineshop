@@ -13,7 +13,7 @@
 
 
 // Route::get('/', function () {
-//     return view('home');
+//     return view('home'); 
 // });
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/search', 'HomeController@search');
@@ -45,17 +45,30 @@ Route::get('pesan/{id}','PesanController@index');
 Route::post('pesan/{id}','PesanController@pesan')->name('pesan');
 Route::get('check_out','PesanController@check_out');
 Route::get('/check_out/destroy/{id}','PesanController@destroy');
+// Route::get('/check_out/hapus/{semua_id}','PesanController@hapus');
 
 Route::get('detail_kategori/{id}','DetailkategoriController@index');
 
-Route::get('konfirmasi-check-out', 'PesanController@konfirmasi');
+Route::get('/history/index/{id}', 'PesanController@konfirmasi');
 
 Route::get('/profil','ProfilController@index');
 Route::post('/profil/update/{id}','ProfilController@update');
 
 Route::get('history','HistoryController@index');
-Route::get('history/{id}','HistoryController@detail');
-
 Route::get('/show/{id}','PesanController@show');
 Route::get('/edit/{id}','PesanController@edit')->name('edit');
 Route::get('/read','PesanController@read');
+// Route::get('/pesan/check_out',function(){
+// 	return view('pesan/check_out');
+// });
+
+Route::post('/check_out/update/{id}','PesanController@update')->name('check_out/update');
+
+// Route::get('/history/index/{id}','HistoryController@index')->name('history/index');
+Route::get('/pesan/pesanan/{id}','PesanController@pesanan')->name('pesan/pesanan');
+Route::get('/pesan/pesanan/{id}','PesanController@cart');
+
+Route::get('/history/index','HistoryController@index')->name('history');
+Route::get('/history/store','HistoryController@store');
+Route::get('/history/edit/{id}','HistoryController@edit');
+Route::post('/history/update/{id}','HistoryController@update');

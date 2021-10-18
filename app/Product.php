@@ -11,5 +11,7 @@ class Product extends Model
     public  $timestamps = false;
     protected $fillable=array('id','kategori_id','nama_barang','deskripsi','harga','stok','berat','gambar1','gambar2');
 
-    
+    public function keranjang(){ 
+    return $this->hasMany('App\Keranjang'); 
+}
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Keranjang;
 use App\Checkout;
+use App\Kategori;
 use Auth;
 use SweetAlert;
 use Carbon\Carbon;
@@ -23,12 +24,36 @@ class PesanController extends Controller
         $product = Product::where('id',$id)->first();
         return view('pesan.index', compact('product'));
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function cart($id)
+    {
+        // $query= DB::table('checkout')
+        //     ->join('product','product.id','=','checkout.product_id')
+        //     ->join('keranjang','keranjang.id','=','checkout.keranjang_id')
+        //     ->select('keranjang.id','product.nama_barang','keranjang.jumlah','product.harga','keranjang.jumlah_harga','checkout.ongkir')
+        //     ->where('keranjang.id',$id)->first();
+
+        
+        // return view('pesan.pesanan', compact('query'));
+
+        // $product = Product::where('id',$id)->first();
+        $keranjang = Keranjang::where('id',$id)->first();
+        $checkout = Checkout::where('id',$id)->first();
+
+        return view('pesan.pesanan', ['product' => $product, 'keranjang' => $keranjang, 'checkout' => $checkout]);
+    }
+
+    public function pesanan($id)
+    {
+        $data['keranjang']=Keranjang::find($id);
+        return view('pesan.pesanan',$data);
+    }
 
     public function pesan(Request $request, $id)
     {
@@ -90,7 +115,7 @@ class PesanController extends Controller
     //     return "delete";
     // }
 
-    public function konfirmasi()
+    public function konfirmasi(Request $request, $id)
     {
         $query= DB::table('keranjang')
             ->join('product','product.id','=','keranjang.product_id')
@@ -103,10 +128,18 @@ class PesanController extends Controller
         $query->status = 1;
         $query->update();
 
-        return redirect('pesan.check_out');
+        return redirect('history.index');
     }
 
+    public function update(Request $request, $id)
+    {
+        $keranjang = Keranjang::find($id);
+        $keranjang->jumlah = $request->jumlah;
+        $keranjang->jumlah_harga = $request->jumlah_harga;
 
+        $keranjang->update();
+        return json_encode(array('status'=>'success'));
+    }
 
     public function create()
     {
@@ -165,10 +198,14 @@ class PesanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        
-    }
+    // public function update($id, $jumlah)
+    // {
+    //     $keranjang = Keranjang::find( Input::get('id') );
+    //     $product = Product::find($keranjang->product_id);
+    //     $keranjang->jumlah = Input::get('jumlah'); 
+    //     $keranjang->harga = $product->harga * $keranjang->jumlah;
+    //     $keranjang->save();
+    // }
 
     /**
      * Remove the specified resource from storage.
@@ -181,4 +218,10 @@ class PesanController extends Controller
         $keranjang = Keranjang::find($id)->delete();
         return redirect('check_out');
     }
+
+    // public function hapus($semua_id)
+    // {
+    //     $keranjang = Keranjang::find($semua_id)->delete();
+    //     return redirect('check_out');
+    // }
 }
