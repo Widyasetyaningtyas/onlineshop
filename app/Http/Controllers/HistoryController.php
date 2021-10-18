@@ -57,7 +57,7 @@ class HistoryController extends Controller
         $checkout->nama_barang = $request->input_nama_barang;
         $checkout->harga = $request->input_harga;
         $checkout->ongkir = $request->input_ongkir;
-        $checkout->status = "Belum Bayar";
+        $checkout->status = "Not Yet Paid";
         $checkout->jumlah = $request->input_jumlah;
         $checkout->jumlah_harga = $request->input_jumlah_harga;
         $checkout->total = $request->input_total;

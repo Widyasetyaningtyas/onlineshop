@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>ARBRE DESIGN CO | DETAIL HISTORY</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -35,15 +35,15 @@
 		<div class="content">
 			<div class="box box-info">
 	            <div class="content-header mt-4 mb-4">
-					<p style="padding: 10px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>Detail <span style=" color: #ff7315">HISTORY</span></b></p>
+					<p style="padding: 10px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>ORDER <span style=" color: #ff7315">DETAILS</span></b></p>
 				</div>
 				<div class="card w3l-ecommerce-main">
 					<div class="card-body product-grid2" style="font-family: sans-serif;">
-			            <form class="form-horizontal" action="{{url('/history/update/'.$checkout->id)}}" method="POST">
+			            <form class="form-horizontal" action="{{url('/history/update/'.$checkout->id)}}" method="POST" enctype="multipart/form-data">
 			            	{{csrf_field()}}
 			            	<div class="row g-3 align-items-center">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Nama Penerima</label>
+							    <label for="input" class="col-form-label">Recipient's Name</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="fullname" class="form-control" name="fullname" value="{{$checkout->fullname}}" readonly="">
@@ -51,7 +51,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Nama Product</label>
+							    <label for="input" class="col-form-label">Product Name</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="nama_barang" class="form-control" name="nama_barang" value="{{$checkout->nama_barang}}" readonly="">
@@ -59,7 +59,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Harga</label>
+							    <label for="input" class="col-form-label">Price</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="harga" class="form-control" name="harga" value="{{$checkout->harga}}" readonly="">
@@ -67,7 +67,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Jumlah</label>
+							    <label for="input" class="col-form-label">Quantity</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="jumlah" class="form-control" name="jumlah" value="{{$checkout->jumlah}}" readonly="">
@@ -75,7 +75,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Jumlah Harga</label>
+							    <label for="input" class="col-form-label">Total Price</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="jumlah_harga" class="form-control" name="jumlah_harga" value="{{$checkout->jumlah_harga}}" readonly="">
@@ -83,7 +83,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Metode</label>
+							    <label for="input" class="col-form-label">Method</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="metode" class="form-control" name="metode" value="{{$checkout->metode}}" readonly="">
@@ -91,7 +91,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Ongkir</label>
+							    <label for="input" class="col-form-label">Shipping Costs</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="ongkir" class="form-control" name="ongkir" value="{{$checkout->ongkir}}" readonly="">
@@ -99,7 +99,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Total Bayar</label>
+							    <label for="input" class="col-form-label">Total Pay</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="total" class="form-control" name="total" value="{{$checkout->total}}" readonly="">
@@ -107,7 +107,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Alamat Rumah</label>
+							    <label for="input" class="col-form-label">Address</label>
 							  </div>
 							  <div class="col-sm-10">
 							    <input type="text" id="alamat_rumah" class="form-control" name="alamat_rumah" value="{{$checkout->alamat_rumah}}" readonly="">
@@ -123,7 +123,7 @@
 							</div>
 							<div class="row g-3 align-items-center mt-1">
 							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Bukti Pembayaran</label>
+							    <label for="input" class="col-form-label">Proof Of Payment</label>
 							  </div>
 							  @if(empty($checkout->bukti_pembayaran))
 				              <div class="col-sm-10">
@@ -131,14 +131,14 @@
 							  </div>
 				              @else
 			                  <div>
-			                  	<img src="{{ asset($checkout->bukti_pembayaran)}}" height="30%" width="30%">
+			                  	<img src="{{ $checkout->bukti_pembayaran}}" height="30%" width="30%">
 			                  </div>
 			                  @endif
 							  
 							</div>
 			              <!-- /.box-body -->
 			              <div class="box-footer mt-5">
-			                <button type="submit" class="btn transmitv-cart ptransmitv-cart add-to-cart btn-block mt-2">Simpan</button>
+			                <button type="submit" class="btn transmitv-cart ptransmitv-cart add-to-cart btn-block mt-2">save</button>
 			              </div>
 			              <!-- /.box-footer -->
 			            </form>

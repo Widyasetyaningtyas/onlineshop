@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	
 	<title>ARBRE DESIGN CO | DETAIL BARANG</title>
@@ -27,27 +27,27 @@
 							<table class="table">
 								<tbody>
 									<tr>
-										<td>Harga</td>
+										<td>Price</td>
 										<td>:</td>
 										<td>Rp. {{ number_format($product->harga) }}</td>
 									</tr>
 									<tr>
-										<td>Stok</td>
+										<td>Supply</td>
 										<td>:</td>
 										<td>{{ number_format($product->stok) }}</td>
 									</tr>
 									<tr>
-										<td>Berat</td>
+										<td>Heavy</td>
 										<td>:</td>
 										<td>{{ number_format($product->berat) }}</td>
 									</tr>
 									<tr>
-										<td>Keterangan</td>
+										<td>Description</td>
 										<td>:</td>
 										<td>{{ $product->keterangan }}</td>
 									</tr>
 									<tr>
-										<td>Jumlah Pesan</td>
+										<td>Quantity</td>
 										<td>:</td>
 										<td>
 											<form action="{{ url('pesan', $product->id) }}" method="post">

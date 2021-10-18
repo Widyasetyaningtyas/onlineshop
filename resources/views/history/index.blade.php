@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>ARBRE DESIGN CO | HISTORY</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -38,21 +38,21 @@
 	            <div class="box-body no-padding product-grid2">
 	            	<div class="card mb-4">
 	            		<div class="card-body">
-	            			<p style="font-size: 1.4em; font-family: sans-serif; font-weight: 600; "><b>Success <span style=" color: #ff7315">Order</span></b></p>
-	            			<p style="font-size: 1em; font-family: sans-serif;">Pesanan anda sudah sukses dipesan salanjutnya untuk pembayaran silahkan transfer di rekening <strong>Bank BRI Nomor Rekening : 47658-335741-984</strong></p>
+	            			<p style="font-size: 1.4em; font-family: sans-serif; font-weight: 600; "><b>Order <span style=" color: #ff7315">Success</span></b></p>
+	            			<p style="font-size: 1em; font-family: sans-serif;">Your order has been successfully ordered, then for payment, please transfer it to your account, <strong>Bank BRI Account Number: 47658-335741-984</strong></p>
 	            		</div>
 	            	</div>
 	            	@if(count($checkout)>0)
 		              <table class="table table-striped table-hover">
 		                <tr>
 		                	<th>No</th>
-		                  <th>Nama Barang</th>
-		                  <th>Harga</th>
-		                  <th>Jumlah Beli</th>
-		                  <th>Ongkir</th>
-		                  <th>Total Bayar</th>
+		                  <th>Product Name</th>
+		                  <th>Price</th>
+		                  <th>Quantity</th>
+		                  <th>Shipping Costs</th>
+		                  <th>Total Pay</th>
 		                  <th>Status</th>
-		                  <th>Aksi</th>
+		                  <th>Action</th>
 		                </tr>
 		                @foreach ($checkout as $data)
 		                <tr>
@@ -66,7 +66,7 @@
 		                  	<button type="button" class="btn btn-success btn-sm">{{$data->status}}</button>
 		                  </td>
 		                  <td>
-		                  	<a href="{{url('/history/edit/'.$data->id)}}" class="btn transmitv-cart ptransmitv-cart add-to-cart btn-block">Detail</a>
+		                  	<a href="{{url('/history/edit/'.$data->id)}}" class="btn transmitv-cart ptransmitv-cart add-to-cart btn-block">Details</a>
 		                  </td>
 		                 <!--  @if(empty($data->bukti_pembayaran))
 		                  <td>
@@ -85,7 +85,7 @@
 					    		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart3 mr-1" viewBox="0 0 16 16">
   									<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 								</svg>
-								History Kosong
+								Empty History
 							</div>
 						@endif
 	              </div>

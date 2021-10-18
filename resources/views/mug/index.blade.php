@@ -12,7 +12,9 @@
 </head>
 <body>
 	<div class="w3l-banner-slider-main">
-		
+		<div class="head">
+			<p style="text-align: center; padding: 30px; font-family: sans-serif; font-weight: 600; font-size: 4vh;"><b>SHOPPING BY <span style=" color: #ff7315">CATEGORY</span></b></p>
+		</div>
 		<div class="theme theme-detail my-3">
 	        <div class="row justify-content-center">
 	            <div class="col-11 col-lg-10">
@@ -25,7 +27,7 @@
 	                                <img src="{{$data->gambar_kategori}}" alt="" class="card-img align-self-center card-img-lg">
 	                            </div>
 	                            <div class="col-0 col-md-6 px-3 pb-3">
-	                                <h5 class="mt-4 mt-md-0 mb-4 mb-md-4"><span class="lohny">{{$data->nama_kategori}} </span></h5>
+	                                <h5 class="mt-4 mt-md-0 mb-4 mb-md-4"><span class="lohny" style="font-family: Roboto Slab; text-align: center; font-weight: 600; font-size: 25px;"><center>{{$data->nama_kategori}} </center></span></h5>
 	                                <p class="mb-md-5">{{$data->deskripsi_kategori}}</p>
 	                            </div>
 	                        </div>

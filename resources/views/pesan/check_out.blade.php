@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	
-	<title>ARBRE DESIGN CO | KERANJANG</title>
+	<title>ARBRE DESIGN CO | CART</title>
 
 	<meta name="csrf-token" content="{{ csrf_token() }}" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -44,13 +44,9 @@
 
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="head">
-					<p style="text-align: center; padding: 30px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>MY SHOPPING <span style=" color: #ff7315">CART</span></b></p>
-					<div id="read"></div>
-				</div>
-			</div>
+			<div class="head">
+				<p style="text-align: center; padding: 30px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>MY SHOPPING <span style=" color: #ff7315">CART</span></b></p>
+			</div>		
 			<div class="col-md-12">
 				<div class="card w3l-ecommerce-main">
 					<div class="card-body product-grid2">
@@ -65,7 +61,7 @@
 								<button class="btn btn-sm transmitv-cart ptransmitv-cart add-to-cart mb-3 ml-1" disabled="disabled" id="button-nonaktif-all-i">Check Out</button> -->
 							</div>
 							<div class="col-md-3" align="right">
-								<strong>Total Harga : </strong>
+								<strong>Total Price : </strong>
 							</div>
 							<div class="col-md-3">
 								<input type="number" name="sum" class="form-control mb-3" id="sum" value="{{ $query->sum('jumlah_harga')}}" readonly="">
@@ -76,12 +72,12 @@
 							<thead>
 								<tr>
 									<th>No</th>
-									<th>Nama Product</th>
-									<th>Gambar</th>
-									<th>Jumlah</th>
-									<th>Harga</th>
-									<th>Total Harga</th>
-									<th>Aksi</th>
+									<th>Product Name</th>
+									<th>Image</th>
+									<th>Amount</th>
+									<th>Price</th>
+									<th>Total Price</th>
+									<th>Action</th>
 								</tr>
 							</thead>
 							<tbody id="tbody">

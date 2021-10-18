@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>ARBRE DESIGN CO | CHECK OUT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -174,7 +174,7 @@
 		}
 	</style>
 	<div class="container">
-		<h2 style="margin: 10px;"><b>CHECK<span style=" color: #ff7315">OUT</span></b></h2>
+		<p style="text-align: center; padding: 30px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>CHECK<span style=" color: #ff7315">OUT</span></b></p>
 		<div class="row">
 		    <div class="col-75 card w3l-ecommerce-main ">
 		        <div class="card-body product-grid2">
@@ -187,20 +187,20 @@
 		                        <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
 		                        <label for="provinsi">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Provinsi</label>
-		                        <input type="text" id="provinsi" name="provinsi" placeholder="Provinsi" required>
+								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Province</label>
+		                        <input type="text" id="provinsi" name="provinsi" placeholder="Province" required>
 		                        <label for="kabupaten">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Kabupaten</label>
-		                        <input type="text" id="kabupaten" name="kabupaten" placeholder="Kabupaten" required>
+								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Regency</label>
+		                        <input type="text" id="kabupaten" name="kabupaten" placeholder="Regency" required>
 		                        <label for="kecamatan">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Kecamatan</label>
-		                        <input type="text" id="kecamatan" name="kecamatan" placeholder="Kecamatan" required>
+								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Sub Districts</label>
+		                        <input type="text" id="kecamatan" name="kecamatan" placeholder="Sub Districts" required>
 		                        <label for="alamat_rumah">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-		  							<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Alamat Rumah</label>
-		                        <input type="text" id="alamat_rumah" name="alamat_rumah" placeholder="Alamat" required>
+		  							<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Home Address</label>
+		                        <input type="text" id="alamat_rumah" name="alamat_rumah" placeholder="Home Address" required>
 		                        <label for="no_hp"><i class="fa fa-phone"></i> Phone</label>
 		                        <input type="number" id="no_hp" name="no_hp" placeholder="Phone" required>
 		                    </div>
@@ -210,20 +210,20 @@
 		                        <label for="metode">Payment Method</label>
 		                        <select  type="text" id="metode" name="metode">
 		                        	<option></option>
-		                        	<option value="1" >COD</option>
-		                        	<option value="2">Kirim Suatu Alamat</option>
+		                        	<option value="1" >Cash On Delivery</option>
+		                        	<option value="2">Send An Address</option>
 		                        </select>
 		                        
 		                    </div>
 		                </div>
-		                	<input type="submit" class="btn btn-md transmitv-cart ptransmitv-cart add-to-cart btn-block mt-2" value="Buat Pesanan">
+		                	<input type="submit" class="btn btn-md transmitv-cart ptransmitv-cart add-to-cart btn-block mt-2" value="Make An Order">
 		            
 		        </div>
 			    </div>
 			    <div class="col-25">
 			        <div class="container" style="font-size: 14px;">
 			            <div class="alert alert-danger mt-2" role="alert" style="font-size: 13px;">
-						  	Segera Lakukakn Pembayaran Sebelum Tanggal<br>
+						  	Immediately Make Payments Before the Date<br>
 						  	<b>
 							  <?php
 			                    $pinjam            = date("d-m-Y");
@@ -239,17 +239,17 @@
 			            	{{ $keranjang->product->nama_barang }}
 			            	<input type="" name="input_harga" id="input_harga" value="Rp. {{ number_format($keranjang->product->harga) }}" hidden="">
 			            	<span class="price">Rp. {{ number_format($keranjang->product->harga) }}</span></p>
-			            <p>Jumlah Beli
+			            <p>Quantity
 			            	<input type="" name="input_jumlah" id="input_jumlah" value="{{ $keranjang->jumlah }}" hidden="">
 			            	<span id="jumlah" name="jumlah" class="price">{{ $keranjang->jumlah }}</span></p>
-			            <p>Berat<span class="price">{{ $keranjang->product->berat }}</span></p>
+			            <p>Heavy<span class="price">{{ $keranjang->product->berat }}</span></p>
 			            <hr>
 			            <input type="" name="input_jumlah_harga"  id="input_jumlah_harga" value="{{ $keranjang->jumlah_harga }}" hidden="">
-			            <p>Sub Total <span class="price" style="color:black" id="jumlah_harga" name="jumlah_harga">{{ $keranjang->jumlah_harga }}</span></p>
-			            <p>Biaya Pengiriman 
+			            <p>Total Price <span class="price" style="color:black" id="jumlah_harga" name="jumlah_harga">{{ $keranjang->jumlah_harga }}</span></p>
+			            <p>Shipping Cost 
 			            	<input type="" id="input_ongkir" name="input_ongkir" value="0" hidden="">
 			            	<span  class="price" style="color:black;" id="ongkir" name="ongkir"><small>0</small></span></p>
-			            <p>Total 
+			            <p>Pay Amount 
 			            	<input type="" name="input_total" id="input_total" hidden="">
 			            	<span class="price total" style="color:black" id="total" name="total"><strong></strong></span></p>
 			        </div>
@@ -298,12 +298,12 @@
         },
         messages: {
             fullname:"Please input Full Name*",
-            kabupaten:"Please input Kabupaten*",
-            provinsi:"Please input Provinsi*",
-            kecamatan:"Please input Kecamatan*",
-            alamat_rumah:"Please input Alamat Rumah*",
+            kabupaten:"Please input Regency*",
+            provinsi:"Please input Province*",
+            kecamatan:"Please input Sub Districts*",
+            alamat_rumah:"Please input Home Address*",
             no_hp:"Please input Phone*",
-            metode:"Please input Metode*",
+            metode:"Please input Method*",
             cardnumber:"Please input card number*",
             expmonth:"Please input exp month*",
             expyear:"Please input exp year*",

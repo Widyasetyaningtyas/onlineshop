@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>ARBRE DESIGN CO | PROFFIL</title>
+	<title>ARBRE DESIGN CO | PROFIL</title>
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- Template CSS -->
@@ -19,7 +19,7 @@
 						<table class="table table-striped table-hover mt-4">
 							<tbody>
 								<tr>
-									<td>Nama</td>
+									<td>Name</td>
 									<td>:</td>
 									<td>{{ $user->name }}</td>
 								</tr>
@@ -29,12 +29,12 @@
 									<td>{{ $user->email }}</td>
 								</tr>
 								<tr>
-									<td>No Hp</td>
+									<td>Phone</td>
 									<td>:</td>
 									<td>{{ $user->no_hp }}</td>
 								</tr>
 								<tr>
-									<td>Alamat</td>
+									<td>Address</td>
 									<td>:</td>
 									<td>{{ $user->alamat }}</td>
 								</tr>
@@ -64,7 +64,7 @@
 		                        </div>
 		                    @endif
 		                    <div class="form-group">
-		                        <label for=""><strong>Nama Lengkap</strong></label>
+		                        <label for=""><strong>Full Name</strong></label>
 		                        <input type="text" name="name" class="form-control" value="{{ $user->name }}">
 		                    </div>
 		                    <div class="form-group">
@@ -72,11 +72,11 @@
 		                        <input type="text" name="email" class="form-control" value="{{ $user->email }}">
 		                    </div>
 		                    <div class="form-group">
-		                        <label for=""><strong>No Hp</strong></label>
+		                        <label for=""><strong>Phone</strong></label>
 		                        <input type="text" name="no_hp" class="form-control" value="{{ $user->no_hp }}">
 		                    </div>
 		                    <div class="form-group">
-		                        <label for=""><strong>Alamat</strong></label>
+		                        <label for=""><strong>Address</strong></label>
 		                        <textarea name="alamat" class="form-control">{{ $user->alamat }}</textarea>
 		                    </div>
 		                    <div class="form-group">
@@ -84,12 +84,12 @@
 		                        <input type="password" name="password" class="form-control">
 		                    </div>
 		                    <div class="form-group">
-		                        <label for=""><strong>Konfirmasi Password</strong></label>
+		                        <label for=""><strong>Confirm Password</strong></label>
 		                        <input type="password" name="password_confirmation" class="form-control">
 		                    </div>
 		                </div>
 		                <div class="card-footer">
-		                    <button type="submit" class="btn btn-primary">Simpan</button>
+		                    <button type="submit" class="btn btn-primary">Save</button>
 		                </div>
 		                </form>
 					</div>

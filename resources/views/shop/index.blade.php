@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>ARBREDESIGNCO | SHOP</title>
 
@@ -15,7 +15,7 @@
 <body>
 	<div class="w3l-ecommerce-main">
 		
-		<div class="ecom-contenthny py-5">
+		<div class="ecom-contenthny py-2">
 			<div class="container py-lg-5">
 				<h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
 				<p class="text-center">Handpicked Favourites just for you</p>
