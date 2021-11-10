@@ -65,7 +65,7 @@
 	<!-- /products-->
 	<div class="w3l-ecommerce-main">
 		<div class="ecom-contenthny py-5">
-			<div class="container py-lg-5">
+			<div class="container py-lg-5" id="shop">
 				<h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
 				<p class="text-center">Handpicked Favourites just for you</p>
 				<!-- /row-->

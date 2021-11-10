@@ -294,66 +294,30 @@
         <div class="card bg-transparent text-white w3l-ecommerce-main">
             <div class="row justify-content-center my-3 my-xl-5">
                 <div class="col-10 col-sm-8 col-md-7 col-lg-5">
-                    <form action="{{ route('login') }}" method="post" class="form-auth text-black">
-                    @csrf
-                    <h4 class="caps text-center" style="letter-spacing: 2px; font-weight: 550; font-size: 20pt;">LOGIN</h4>
+                <form method="POST" action="{{ url('/forgot_password') }}" class="form-auth text-black">
+                    {{ csrf_field() }}
 
-                    <div class="card-body" style="margin-top: -15px;">
-                        @if(session('errors'))
-                            <div class="alert alert-danger alert-dismissible fade show form-group" role="alert">
-                                <p>Something it's wrong:</p>
-                                <button type="button" class="close mr-2" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">X</span>
-                                </button>
-                                <ul>
-                                @foreach ($errors->all() as $error)
-                                <li style="margin-top: -20px; margin-bottom: -10px;"><p>{{ $error }}</p></li>
-                                @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        @if (Session::has('success'))
-                            <div class="alert alert-success">
-                                {{ Session::get('success') }}
-                            </div>
-                        @endif
-                        @if (Session::has('error'))
-                            <div class="alert alert-danger">
-                                {{ Session::get('error') }}
-                            </div>
-                        @endif
-                        <div class="form-group text-left">
-                            <label for="username" style="font-size: 13pt; letter-spacing: 1px;">Email / Username</label>
-                            <input style="height: 35px; font-size: 13pt; letter-spacing: 0.5px;" type="text" name="email" class="form-control radius form-control-sm">
-                        </div>
-                        <div class="form-group text-left mb-4">
-                            <label for="password" style="font-size: 13pt; letter-spacing: 1px;">Password</label>
-                            <input  style="height: 35px; font-size: 13pt; letter-spacing: 0.5px;" type="password" id="inputPassword" name="password" class="form-control">
-                            <input type="checkbox" onclick="myFunction()"><small style="font-size: 9pt; letter-spacing: 0.5px;"> Show Password</small>
-                        </div>
+                    @if(session('error'))
+                        <div>{{ session('error') }}</div>
+                    @endif
+
+                    @if(session('success'))
+                        <div>{{ session('success')}}</div>
+                    @endif
+
+                    <div class="form-group  text-left">
+                        <label style="font-size: 13pt; letter-spacing: 1px;>Email Address">Email Address</label>
+                        <input style="height: 35px; font-size: 13pt; letter-spacing: 0.5px;" id="email" type="email" class="form-control radius form-control-sm"
+                            name="email" required>
                     </div>
-                    <div class="product-grid2" style="margin-top: -30px; padding-left: 20px; padding-right: 20px;">
-                        <button type="submit" class="btn btn-block transmitv-cart ptransmitv-cart add-to-cart" style="padding-top: 10px; letter-spacing: 2px; font-weight: 550; font-size: 10pt; border-radius: 0px;">LOGIN</button>
-                        <p class="mt-2 text-center">Don't have an account yet? <a href="{{ route('register') }}">Register</a> now!</p>
-                        <!-- <p class="text-center" style="margin-top: -15px;"><a href="{{ url('/forgot_password')}}" class="text-dark">Forgot your username / password?</a></p> -->
-                        
+
+                    <div class="product-grid2">
+                        <button type="submit" class="btn btn-block transmitv-cart ptransmitv-cart add-to-cart" style="padding-top: 10px; letter-spacing: 2px; font-weight: 550; font-size: 10pt; border-radius: 0px;">SEND PASSWORD RESET LINK</button>
                     </div>
-            
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
 
-    <script>
-        function myFunction() {
-            var x = document.getElementById("inputPassword");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-        }
-    </script>
 </body>
 </html>

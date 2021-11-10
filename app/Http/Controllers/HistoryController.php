@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Keranjang;
+use App\Kategori;
 use App\Checkout;
 use App\User;
 use Auth;
@@ -47,6 +48,8 @@ class HistoryController extends Controller
 
         $checkout = new Checkout;
         $checkout->user_id = Auth::user()->id;
+        $checkout->kategori_id = $request->input_kategori_id;
+        $checkout->product_id = $request->input_product_id;
         $checkout->fullname = $request->fullname;
         $checkout->provinsi = $request->provinsi;
         $checkout->kabupaten = $request->kabupaten;
@@ -62,6 +65,13 @@ class HistoryController extends Controller
         $checkout->jumlah_harga = $request->input_jumlah_harga;
         $checkout->total = $request->input_total;
         $checkout->save();
+
+        // $checkout = Checkout::where('id', $id)->get();
+        // foreach ($checkout as $checkout) {
+        //     $product = Product::where('id', $checkout->product_id)->first();
+        //     $product->stok = $product->stok-$checkout->jumlah;
+        //     $product->update(); 
+        // }
         return redirect('history');
     }
 

@@ -14,7 +14,6 @@
 		  font-size: 13px;
 		  font-weight: 600;
 		  text-align: center;
-		  padding: 7px 7px;
 		  left: 0;
 		  bottom: -100%;
 		  transition: all .3s;
@@ -28,64 +27,191 @@
 		.w3l-ecommerce-main .product-grid2:hover .add-to-cart {
 		  bottom: 0;
 		}
+
+		@media(max-width: 575.98px){
+			.kosong {
+				margin-top: 50px;
+			}
+			.item {
+				margin-left: 5px;
+				margin-right: 5px;
+			}
+		}
+
+		@media(min-width: 576px) and (max-width: 767.98px){
+			.kosong {
+				margin-top: 80px;
+			}
+			.item {
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+		}
+
+		@media(min-width: 768px) and (max-width: 991.98px){
+			.kosong {
+				margin-top: 80px;
+			}
+			.kosong img {
+				width: 230px;
+			}
+			.kosong p {
+				font-size: 30px;
+			}
+			.kosong a {
+				width: 130px;
+			}
+			
+			.kosongq {
+				margin-top: 80px;
+			}
+			.kosongq img {
+				width: 230px;
+			}
+			.kosongq p {
+				font-size: 20px;
+			}
+			.kosongq a {
+				width: 200px;
+			}
+			.item {
+				margin-left: -100px;
+				margin-right: -100px;
+			}
+		}
+
+		@media(min-width: 992px) and (max-width: 1199.98px){
+			.kosong {
+				margin-top: 80px;
+			}
+			.kosong img {
+				width: 140px;
+			}
+			.kosong p {
+				font-size: 17px;
+			}
+			.kosong a {
+				width: 100px;
+			}
+			.kosongq {
+				margin-top: 80px;
+			}
+			.kosongq img {
+				width: 140px;
+			}
+			.kosongq p {
+				font-size: 17px;
+			}
+			.kosongq a {
+				width: 150px;
+			}
+			.item {
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+		}
+
+		@media(min-width: 1200px){
+			.kosong {
+				margin-top: 15vh;
+			}
+			.kosong img {
+				width: 200px;
+			}
+			.kosong p {
+				font-size: 20px;
+			}
+			.kosong a {
+				width: 100px;
+			}
+
+			.kosongq {
+				margin-top: 15vh;
+			}
+			.kosongq img {
+				width: 200px;
+			}
+			.kosongq p {
+				font-size: 20px;
+			}
+			.kosongq a {
+				width: 150px;
+			}
+			.item {
+				margin-left: -5vh;
+				margin-right: -5vh;
+			}
+			.status {
+				font-size: 13px;
+			}
+		}
 	</style>
 	<div class="container">
 		<div class="content-header mt-4 mb-4">
-			<p style="padding: 10px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>Your Order <span style=" color: #ff7315">HISTORY</span></b></p>
+			<p style="padding: 10px; font-size: 2em; font-family: Candara; font-weight: 600; "><b>Your Order <span style=" color: #ff7315">HISTORY</span></b></p>
 		</div>
-		<div class="content w3l-ecommerce-main">
+		<div class="w3l-ecommerce-main">
 	            <!-- /.box-header -->
-	            <div class="box-body no-padding product-grid2">
-	            	<div class="card mb-4">
-	            		<div class="card-body">
-	            			<p style="font-size: 1.4em; font-family: sans-serif; font-weight: 600; "><b>Order <span style=" color: #ff7315">Success</span></b></p>
-	            			<p style="font-size: 1em; font-family: sans-serif;">Your order has been successfully ordered, then for payment, please transfer it to your account, <strong>Bank BRI Account Number: 47658-335741-984</strong></p>
-	            		</div>
-	            	</div>
+	            <div class="card-body product-grid2">
 	            	@if(count($checkout)>0)
-		              <table class="table table-striped table-hover">
-		                <tr>
-		                	<th>No</th>
-		                  <th>Product Name</th>
-		                  <th>Price</th>
-		                  <th>Quantity</th>
-		                  <th>Shipping Costs</th>
-		                  <th>Total Pay</th>
-		                  <th>Status</th>
-		                  <th>Action</th>
+					<table style="width: 100%; font-family: Geneva;" class="item">
+						<tr>
+							<td>
+								<p style="font-size: 1.4em; font-weight: 400; ">Order Success</p>
+	            				<p style="font-size: 1em;">Your order has been successfully ordered, then for payment, please transfer it to your account, <strong>Bank BRI Account Number: 47658-335741-984</strong></p>
+							</td>
+						</tr>
+					</table>
+		            <table id="table" class="item" style="margin-top: 20px;">
+		                <tr style="width: 100%; height: 40px; font-family: Geneva; border-bottom: 2px solid grey;">
+		                	<th style="width: 20%;">Product Name</th>
+		                	<th style="width: 10%;">Price</th>
+		                	<th style="width: 20%; text-align: center;">Quantity</th>
+		                  	<th style="width: 15%;">Shipping Costs</th>
+		                  	<th style="width: 15%;">Total Pay</th>
+		                  	<th style="width: 10%;">Status</th>
+							<th></th>
+		                  	<th style="width: 10%;">Action</th>
 		                </tr>
 		                @foreach ($checkout as $data)
 		                <tr>
-		                	<td>{{$loop->iteration}}</td>
-		                  <td>{{$data->nama_barang}}</td>
-		                  <td>{{$data->harga}}</td>
-		                  <td>{{$data->jumlah}}</td>
-		                  <td>Rp. {{ number_format($data->ongkir)}}</td>
-		                  <td>Rp. {{ number_format($data->total)}}</td>
-		                  <td>
-		                  	<button type="button" class="btn btn-success btn-sm">{{$data->status}}</button>
-		                  </td>
-		                  <td>
-		                  	<a href="{{url('/history/edit/'.$data->id)}}" class="btn transmitv-cart ptransmitv-cart add-to-cart btn-block">Details</a>
-		                  </td>
-		                 <!--  @if(empty($data->bukti_pembayaran))
-		                  <td>
-		                  	<input type="file" name="bukti_pembayaran" id="bukti_pembayaran">
-		                  </td>
-		                  @else
-		                  <td>
-		                  	<img src="{{$data->bukti_pembayaran}}" height="30%" width="30%">
-		                  </td>
-		                  @endif -->
+							<td style="width: 20%; padding-top: 20px;">{{$data->nama_barang}}</td>
+							<td style="width: 10%; padding-top: 20px;">{{$data->harga}}</td>
+							<td style="width: 20%; padding-top: 20px; text-align: center;">{{$data->jumlah}}</td>
+							<td style="width: 15%; padding-top: 20px;">Rp. {{ number_format($data->ongkir)}}</td>
+							<td style="width: 15%; padding-top: 20px;">Rp. {{ number_format($data->total)}}</td>
+							<td style="width: 10%; padding-top: 20px;">
+								@if($data->status == 'Not Yet Paid')
+									<button type="button" class="btn btn-warning btn-sm status">{{$data->status}}</button>
+								@elseif($data->status == 'Being Sent')
+									<button type="button" class="btn btn-primary btn-sm status">{{$data->status}}</button>
+								@elseif($data->status == 'Finished')
+									<button type="button" class="btn btn-success btn-sm status">{{$data->status}}</button>
+								@elseif($data->status == 'Cancelled')
+									<button type="button" class="btn btn-danger btn-sm status">{{$data->status}}</button>
+								@endif
+							</td>
+							<td></td>
+							<td style="width: 10%; padding-top: 20px;">
+								<a href="{{url('/history/edit/'.$data->id)}}" class="btn transmitv-cart btn-sm add-to-cart btn-block">Details</a>
+							</td>
+							<!--  @if(empty($data->bukti_pembayaran))
+							<td>
+								<input type="file" name="bukti_pembayaran" id="bukti_pembayaran">
+							</td>
+							@else
+							<td>
+								<img src="{{$data->bukti_pembayaran}}" height="30%" width="30%">
+							</td>
+							@endif -->
 		                </tr>
 		                @endforeach
 		               </table>
 			            @else
-			               	<div class="alert alert-info" role="alert">
-					    		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart3 mr-1" viewBox="0 0 16 16">
-  									<path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-								</svg>
-								Empty History
+							<div class="kosongq" align="center" style="font-family: Geneva;">
+								<img src="assets/images/empty_history1.png">
+								<p style="margin-top: ;">Your history is empty</p>
+								<a href="{{url('check_out')}}" class="btn transmitv-cart add-to-cart btn-block mt-2" style="font-family: Candara; font-size: 13px;">Checkout now</a>
 							</div>
 						@endif
 	              </div>

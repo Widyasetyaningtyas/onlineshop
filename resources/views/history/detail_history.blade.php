@@ -29,17 +29,26 @@
 		.w3l-ecommerce-main .product-grid2:hover .add-to-cart {
 		  bottom: 0;
 		}
+
+		.read input[readonly] 
+		{
+			border: none;
+			border-bottom: 2px solid black;
+			background-color: white;        
+			color: black;
+			border-radius: 0px;
+		}
 	</style>
 
 	<div class="container">
 		<div class="content">
 			<div class="box box-info">
 	            <div class="content-header mt-4 mb-4">
-					<p style="padding: 10px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>ORDER <span style=" color: #ff7315">DETAILS</span></b></p>
+					<p style="padding: 10px; font-size: 2em; font-family: Candara; font-weight: 600; "><b>Order <span style=" color: #ff7315">Details</span></b></p>
 				</div>
-				<div class="card w3l-ecommerce-main">
-					<div class="card-body product-grid2" style="font-family: sans-serif;">
-			            <form class="form-horizontal" action="{{url('/history/update/'.$checkout->id)}}" method="POST" enctype="multipart/form-data">
+				<div class="w3l-ecommerce-main">
+					<div class="card-body product-grid2" style="font-family: Candara;">
+			            <form class="form-horizontal read" action="{{url('/history/update/'.$checkout->id)}}" method="POST" enctype="multipart/form-data">
 			            	{{csrf_field()}}
 			            	<div class="row g-3 align-items-center">
 							  <div class="col-sm-2">
@@ -118,29 +127,9 @@
 							    <label for="input" class="col-form-label">Status</label>
 							  </div>
 							  <div class="col-sm-10">
-							    <input type="text" id="status" class="btn btn-sm btn-success" name="status" value="{{$checkout->status}}" readonly="">
+							    <input type="text" id="status" class="form-control" name="status" value="{{$checkout->status}}" readonly="">
 							  </div>
 							</div>
-							<div class="row g-3 align-items-center mt-1">
-							  <div class="col-sm-2">
-							    <label for="input" class="col-form-label">Proof Of Payment</label>
-							  </div>
-							  @if(empty($checkout->bukti_pembayaran))
-				              <div class="col-sm-10">
-							    <input type="file" id="bukti_pembayaran" class="form-control" name="bukti_pembayaran">
-							  </div>
-				              @else
-			                  <div>
-			                  	<img src="{{ $checkout->bukti_pembayaran}}" height="30%" width="30%">
-			                  </div>
-			                  @endif
-							  
-							</div>
-			              <!-- /.box-body -->
-			              <div class="box-footer mt-5">
-			                <button type="submit" class="btn transmitv-cart ptransmitv-cart add-to-cart btn-block mt-2">save</button>
-			              </div>
-			              <!-- /.box-footer -->
 			            </form>
 		        	</div>
 		        </div>

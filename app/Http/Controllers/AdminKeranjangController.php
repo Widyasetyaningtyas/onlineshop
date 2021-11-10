@@ -21,7 +21,7 @@
 			$this->button_edit = true;
 			$this->button_delete = true;
 			$this->button_detail = true;
-			$this->button_show = true;
+			$this->button_show = false;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
@@ -30,9 +30,8 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"ID Keranjang","name"=>"id"];
-			$this->col[] = ["label"=>"ID Product","name"=>"product_id"];
-			$this->col[] = ["label"=>"ID User","name"=>"user_id"];
+			$this->col[] = ["label"=>"Nama Product","name"=>"product_id","join"=>"product,nama_barang"];
+			$this->col[] = ["label"=>"Nama Customer","name"=>"user_id","join"=>"users,name"];
 			$this->col[] = ["label"=>"Tanggal","name"=>"tanggal"];
 			$this->col[] = ["label"=>"Status","name"=>"status"];
 			$this->col[] = ["label"=>"Jumlah","name"=>"jumlah"];
@@ -41,25 +40,22 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'ID Keranjang','name'=>'id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'ID Product','name'=>'product_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'ID User','name'=>'user_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'ID Product','name'=>'product_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'product,id'];
+			$this->form[] = ['label'=>'ID User','name'=>'user_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'users,id'];
 			$this->form[] = ['label'=>'Tanggal','name'=>'tanggal','type'=>'date','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukan Status Keranjang'];
+			$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Jumlah'];
+			$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Jumlah Harga'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'ID Keranjang','name'=>'id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'ID Product','name'=>'product_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'ID User','name'=>'user_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'ID Checkout','name'=>'checkout_id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID Product','name'=>'product_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'ID User','name'=>'user_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Tanggal','name'=>'tanggal','type'=>'date','validation'=>'required','width'=>'col-sm-9'];
-			//$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Status','name'=>'status','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukan Status Keranjang'];
+			//$this->form[] = ['label'=>'Jumlah','name'=>'jumlah','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Jumlah'];
+			//$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Jumlah Harga'];
 			# OLD END FORM
 
 			/* 

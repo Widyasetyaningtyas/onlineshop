@@ -9,6 +9,9 @@ use Validator;
 use Hash;
 use Session;
 use App\User;
+use Sentinel;
+use Reminder;
+use Mail;
  
  
 class AuthController extends Controller
@@ -30,10 +33,10 @@ class AuthController extends Controller
         ];
  
         $messages = [
-            'email.required'        => 'Email wajib diisi',
-            'email.email'           => 'Email tidak valid',
-            'password.required'     => 'Password wajib diisi',
-            'password.string'       => 'Password harus berupa string'
+            'email.required'        => 'Email is required',
+            'email.email'           => 'Invalid email',
+            'password.required'     => 'Password is required',
+            'password.string'       => 'Password must be a string'
         ];
  
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -56,7 +59,7 @@ class AuthController extends Controller
         } else { // false
  
             //Login Fail
-            Session::flash('error', 'Email atau password salah');
+            Session::flash('error', 'Wrong email or password');
             return redirect()->route('login');
         }
  
@@ -78,14 +81,14 @@ class AuthController extends Controller
         ];
  
         $messages = [
-            'name.required'         => 'Nama Lengkap wajib diisi',
-            'name.min'              => 'Nama lengkap minimal 3 karakter',
-            'name.max'              => 'Nama lengkap maksimal 35 karakter',
-            'email.required'        => 'Email wajib diisi',
-            'email.email'           => 'Email tidak valid',
-            'email.unique'          => 'Email sudah terdaftar',
-            'password.required'     => 'Password wajib diisi',
-            'password.confirmed'    => 'Password tidak sama dengan konfirmasi password'
+            'name.required'         => 'Username is required',
+            'name.min'              => 'Username minimum 3 character',
+            'name.max'              => 'Username maximum 35 character',
+            'email.required'        => 'Email is required',
+            'email.email'           => 'Invalid email',
+            'email.unique'          => 'Email already registered',
+            'password.required'     => 'Password is required',
+            'password.confirmed'    => 'Password is not the same as confirmation password'
         ];
  
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -104,10 +107,10 @@ class AuthController extends Controller
         $simpan = $user->save();
  
         if($simpan){
-            Session::flash('success', 'Register berhasil! Silahkan login untuk mengakses data');
+            Session::flash('success', 'Register successful! Please login to access data');
             return redirect()->route('login');
         } else {
-            Session::flash('errors', ['' => 'Register gagal! Silahkan ulangi beberapa saat lagi']);
+            Session::flash('errors', ['' => 'Registration failed! Please repeat in a moment']);
             return redirect()->route('register');
         }
     }
@@ -115,8 +118,38 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout(); // menghapus session yang aktif
-        return redirect()->route('home');
+        return redirect()->route('login');
     }
  
+    public function forgot()
+    {
+        return view('forgot_password');
+    }
+
+    public function password(Request $request)
+    {
+        $user = User::whereEmail($request->email)->first();
+
+        if($user == null){
+            return redirect()->back()->with(['error' => 'Email not exists']);
+        }
+
+        $user = Sentinel::findById($user->id);
+        $reminder = Reminder::exists($user) ? : Reminder::create($user);
+        $this->sendEmail($user, $reminder->code);
+
+        return redirect()->back()->with(['success' => 'Reset code sent to your email.']);
+    }
+
+    public function sendEmail($user, $code){
+        Mail::send(
+            'email_forgot',
+            ['user' => $user, 'code' => $code],
+            function($message) use ($user){
+                $message->to($user->email);
+                $message->subject("$user->name, reset your password.");
+            }
+        );
+    }
  
 }

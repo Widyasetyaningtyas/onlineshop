@@ -20,7 +20,7 @@
 <body>
 	<style type="text/css">
 		body {
-		    font-family: Arial;
+		    font-family: Helvetica Neue;
 		    font-size: 15px;
 		    padding: 8px;
 		}
@@ -76,25 +76,28 @@
 		    width: 100%;
 		    margin-bottom: 20px;
 		    padding: 12px;
-		    border: 1px solid rgb(130, 26, 26);
-		    border-radius: 1px;
+		    border-top: 0;
+			border-right: 0;
+			border-left: 0;
 		}
 
 		input[type=number] {
 		    width: 100%;
 		    margin-bottom: 20px;
 		    padding: 12px;
-		    border: 1px solid rgb(130, 26, 26);
-		    border-radius: 1px;
+		    border-top : 0;
+			border-left: 0;
+			border-right: 0;
 		}
 
 		select[type=text] {
 		    width: 100%;
 		    margin-bottom: 20px;
 		    padding: 12px;
-		    border: 1px solid rgb(130, 26, 26);
-		    border-radius: 1px;
-		    font-size: 14px;"
+		    border-top : 0;
+			border-left: 0;
+			border-right: 0;
+		    font-size: 16px;"
 		}
 
 		label {
@@ -174,7 +177,7 @@
 		}
 	</style>
 	<div class="container">
-		<p style="text-align: center; padding: 30px; font-size: 2em; font-family: sans-serif; font-weight: 600; "><b>CHECK<span style=" color: #ff7315">OUT</span></b></p>
+		<p style="text-align: center; padding: 30px; font-size: 2em; font-family: Candara; font-weight: 600; "><b>Check<span style=" color: #ff7315">Out</span></b></p>
 		<div class="row">
 		    <div class="col-75 card w3l-ecommerce-main ">
 		        <div class="card-body product-grid2">
@@ -182,36 +185,37 @@
 		                {{csrf_field()}}
 		                <div class="row">
 		                    <div class="col-50">
-		                        <h3 class="mt-2">Shipping Address</h3>
-		                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-		                        <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+		                        <h4 class="mt-2 mb-4"><i>Shipping Address</i></h4>
+		                        <label for="fname"><i class="fa fa-user"></i> Recipient's Name</label>
+		                        <input type="text" id="fullname" name="fullname" required>
 		                        <label for="provinsi">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
 								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Province</label>
-		                        <input type="text" id="provinsi" name="provinsi" placeholder="Province" required>
+		                        <input type="text" id="provinsi" name="provinsi" required>
 		                        <label for="kabupaten">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Regency</label>
-		                        <input type="text" id="kabupaten" name="kabupaten" placeholder="Regency" required>
+								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> City</label>
+		                        <input type="text" id="kabupaten" name="kabupaten" required>
 		                        <label for="kecamatan">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Sub Districts</label>
-		                        <input type="text" id="kecamatan" name="kecamatan" placeholder="Sub Districts" required>
+								  	<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Districts</label>
+		                        <input type="text" id="kecamatan" name="kecamatan" required>
 		                        <label for="alamat_rumah">
 		                        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-		  							<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Home Address</label>
-		                        <input type="text" id="alamat_rumah" name="alamat_rumah" placeholder="Home Address" required>
+		  							<path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg> Address</label>
+		                        <input type="text" id="alamat_rumah" name="alamat_rumah" required>
 		                        <label for="no_hp"><i class="fa fa-phone"></i> Phone</label>
-		                        <input type="number" id="no_hp" name="no_hp" placeholder="Phone" required>
+		                        <input type="text" id="no_hp" name="no_hp" required>
+		                        <input type="text" name="input_product_id" id="input_product_id" value="{{ $keranjang->product->id }}" hidden="">
 		                    </div>
 
 		                    <div class="col-50">
-		                        <h3 class="mt-2">Payment</h3>
+		                        <h4 class="mt-2 mb-4"><i>Payment</i></h4>
 		                        <label for="metode">Payment Method</label>
-		                        <select  type="text" id="metode" name="metode">
+		                        <select  type="text" id="metode" name="metode" required>
 		                        	<option></option>
-		                        	<option value="1" >Cash On Delivery</option>
-		                        	<option value="2">Send An Address</option>
+		                        	<option value="COD" >COD</option>
+		                        	<option value="Send An Address">Send An Address</option>
 		                        </select>
 		                        
 		                    </div>
@@ -222,7 +226,7 @@
 			    </div>
 			    <div class="col-25">
 			        <div class="container" style="font-size: 14px;">
-			            <div class="alert alert-danger mt-2" role="alert" style="font-size: 13px;">
+			            <div class="alert alert-danger mt-2" role="alert" style="font-size: 15px;">
 						  	Immediately Make Payments Before the Date<br>
 						  	<b>
 							  <?php
@@ -233,7 +237,7 @@
 			                  ?>
 			          		</b>
 						</div>
-			            <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4>
+			            <h4 class="mb-4">Shopping Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4><hr>
 			            <p>
 			            	<input type="" name="input_nama_barang" id="input_nama_barang" value="{{ $keranjang->product->nama_barang }}" hidden="">
 			            	{{ $keranjang->product->nama_barang }}
@@ -249,7 +253,7 @@
 			            <p>Shipping Cost 
 			            	<input type="" id="input_ongkir" name="input_ongkir" value="0" hidden="">
 			            	<span  class="price" style="color:black;" id="ongkir" name="ongkir"><small>0</small></span></p>
-			            <p>Pay Amount 
+			            <p>Grand Total
 			            	<input type="" name="input_total" id="input_total" hidden="">
 			            	<span class="price total" style="color:black" id="total" name="total"><strong></strong></span></p>
 			        </div>
@@ -321,7 +325,7 @@
 			var metode = $(this).val();
 			
 
-			if (metode == 1) {
+			if (metode == "COD") {
 				var ongkir = 0;
 				$("small").html(ongkir);
 			} else{
@@ -333,6 +337,7 @@
 			var jumlah=document.getElementById('input_jumlah').value;
 			var nama_barang=document.getElementById('input_nama_barang').value;
 			var harga=document.getElementById('input_harga').value;
+			var product_id=document.getElementById('input_product_id').value;
 			document.getElementById('input_ongkir').value=ongkir;
 			var total=parseInt(jml)+parseInt(ongkir);
 			document.getElementById('input_total').value=total;

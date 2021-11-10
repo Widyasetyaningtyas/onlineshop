@@ -92,7 +92,7 @@ class PesanController extends Controller
         // $checkout->save();
         // SweetAlert::success('Product success masuk keranjang, Checkout sekarang', 'Success');
 
-        return redirect()->route('home');
+        return redirect()->route('check_out');
 
 
     }
@@ -105,6 +105,7 @@ class PesanController extends Controller
             ->where('keranjang.user_id', Auth::user()->id)
             ->where('status',0)
             ->get();
+
 
         
         return view('pesan.check_out', compact('query'));

@@ -21,7 +21,7 @@
 			$this->button_edit = true;
 			$this->button_delete = true;
 			$this->button_detail = true;
-			$this->button_show = true;
+			$this->button_show = false;
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
@@ -30,28 +30,26 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"ID Kategori","name"=>"id"];
 			$this->col[] = ["label"=>"Nama Kategori","name"=>"nama_kategori"];
-			$this->col[] = ["label"=>"Deskripsi Kategori","name"=>"deskripsi_kategori"];
-			$this->col[] = ["label"=>"Gambar","name"=>"gambar","image"=>true];
-			$this->col[] = ["label"=>"Gambar Kategori","name"=>"gambar_kategori","image"=>true];
+			$this->col[] = ["label"=>"Deskripsi Kategori","name"=>"deskripsi_kategori","width"=>"600"];
+			$this->col[] = ["label"=>"Gambar 1","name"=>"gambar","image"=>true];
+			$this->col[] = ["label"=>"Gambar 2","name"=>"gambar_kategori","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'ID Kategori','name'=>'id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Nama Kategori','name'=>'nama_kategori','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Deskripsi Kategori','name'=>'deskripsi_kategori','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Gambar','name'=>'gambar','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Gambar Kategori','name'=>'gambar_kategori','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Nama Kategori','name'=>'nama_kategori','type'=>'text','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Nama Kategori'];
+			$this->form[] = ['label'=>'Deskripsi Kategori','name'=>'deskripsi_kategori','type'=>'textarea','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Deskripsi Kategori'];
+			$this->form[] = ['label'=>'Gambar 1','name'=>'gambar','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Gambar 1','name'=>'gambar_kategori','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'ID Kategori','name'=>'id','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Nama Kategori','name'=>'nama_kategori','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Deskripsi Kategori','name'=>'deskripsi_kategori','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			//$this->form[] = ['label'=>'Gambar','name'=>'gambar','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Nama Kategori','name'=>'nama_kategori','type'=>'text','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Nama Kategori'];
+			//$this->form[] = ['label'=>'Deskripsi Kategori','name'=>'deskripsi_kategori','type'=>'textarea','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Deskripsi Kategori'];
+			//$this->form[] = ['label'=>'Gambar 1','name'=>'gambar','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'Gambar 1','name'=>'gambar_kategori','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
 			# OLD END FORM
 
 			/* 

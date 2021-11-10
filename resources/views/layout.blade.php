@@ -40,6 +40,22 @@
                 </a>
               </li>
               @endif
+
+              @if(empty(Auth::user()->id))
+              <li class="transmitvcart galssescart2 cart cart box_1">
+
+                <?php 
+                  $notif = \App\Keranjang::where('user_id', Auth::user()->id)->where('status',0)->get()->count();
+                
+                ?>
+                <a href="{{url('login')}}" class="last">
+                  <button class="top_transmitv_cart" type="submit" name="submit" value="">
+                    My Cart
+                    <span class="fa fa-shopping-cart"></span><sup><span class="badge badge">{{ $notif }}</span></sup>
+                  </button>
+                </a>
+              </li>
+              @else
               <li class="transmitvcart galssescart2 cart cart box_1">
 
                 <?php 
@@ -53,6 +69,7 @@
                   </button>
                 </a>
               </li>
+              @endif
             </ul>
             <!--//right-->
             
@@ -95,10 +112,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{url('shop')}}">Shop</a>
+                  <a class="nav-link" href="#shop">Shop</a>
                 </li>
 
                 <li class="nav-item dropdown">
