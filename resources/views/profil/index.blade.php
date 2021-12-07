@@ -10,6 +10,27 @@
   
 </head>
 <body>
+	<style>
+		.w3l-ecommerce-main .product-grid2 .add-to-cart {
+		  color: #fff;
+		  background-color: #232020;
+		  font-size: 13px;
+		  font-weight: 600;
+		  text-align: center;
+		  left: 0;
+		  bottom: -100%;
+		  transition: all .3s;
+		}
+
+		.w3l-ecommerce-main .product-grid2 .add-to-cart:hover {
+		  background-color: #ff7315;
+		  text-decoration: none;
+		}
+
+		.w3l-ecommerce-main .product-grid2:hover .add-to-cart {
+		  bottom: 0;
+		}
+	</style>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 mt-4">
@@ -43,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-12 mt-2">
+			<div class="col-md-12 mt-2 w3l-ecommerce-main mb-4">
 				<div class="card">
 					<div class="card-body">
 						<h4><i class="fa fa-pencil"></i> Edit Profile</h4>
@@ -88,8 +109,8 @@
 		                        <input type="password" name="password_confirmation" class="form-control">
 		                    </div>
 		                </div>
-		                <div class="card-footer">
-		                    <button type="submit" class="btn btn-primary">Save</button>
+		                <div class="product-grid2 mt-5 mb-4" style="margin-left: 20px; margin-right: 20px; width: 150px;">
+		                    <button type="submit" class="btn transmitv-cart add-to-cart mt-2">Save</button>
 		                </div>
 		                </form>
 					</div>

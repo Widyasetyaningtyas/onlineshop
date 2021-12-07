@@ -39,10 +39,10 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'You can only enter the letter only'];
-			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:users','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
-			$this->form[] = ['label'=>'Email Verified At','name'=>'email_verified_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Password','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Minimum 5 characters. Please leave empty if you did not change the password.'];
+			$this->form[] = ['label'=>'Name','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-9','placeholder'=>'You can only enter the letter only'];
+			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:users','width'=>'col-sm-9','placeholder'=>'Please enter a valid email address'];
+			$this->form[] = ['label'=>'Email Verified At','name'=>'email_verified_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Password','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-9','help'=>'Minimum 5 characters. Please leave empty if you did not change the password.'];
 			$this->form[] = ['label'=>'No Hp','name'=>'no_hp','type'=>'text','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Nomor Handphone Yang Aktif'];
 			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'textarea','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Alamat Anda'];
 			# END FORM DO NOT REMOVE THIS LINE
@@ -53,8 +53,8 @@
 			//$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:users','width'=>'col-sm-10','placeholder'=>'Please enter a valid email address'];
 			//$this->form[] = ['label'=>'Email Verified At','name'=>'email_verified_at','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Password','name'=>'password','type'=>'password','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Minimum 5 characters. Please leave empty if you did not change the password.'];
-			//$this->form[] = ['label'=>'No Hp','name'=>'no_hp','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			//$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'textarea','validation'=>'required','width'=>'col-sm-9'];
+			//$this->form[] = ['label'=>'No Hp','name'=>'no_hp','type'=>'text','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Nomor Handphone Yang Aktif'];
+			//$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'textarea','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Alamat Anda'];
 			# OLD END FORM
 
 			/* 

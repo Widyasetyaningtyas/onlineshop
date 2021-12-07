@@ -159,6 +159,7 @@
 							<td>
 								<p style="font-size: 1.4em; font-weight: 400; ">Order Success</p>
 	            				<p style="font-size: 1em;">Your order has been successfully ordered, then for payment, please transfer it to your account, <strong>Bank BRI Account Number: 47658-335741-984</strong></p>
+								<p style="font-size: 1em;">The goods will be packed when you have paid for it</p>
 							</td>
 						</tr>
 					</table>

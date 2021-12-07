@@ -75,7 +75,7 @@
 					<div class="col-lg-3 col-6 product-incfhny mt-4">
 						<div class="product-grid2 transmitv">
 							<div class="product-image2">
-								<a href="#">
+								<a href="{{ url('pesan', $data->id) }}">
 									<img class="pic-1 img-fluid" src="{{$data->gambar1}}">
 									<img class="pic-2 img-fluid" src="{{$data->gambar2}}">
 								</a>
@@ -90,7 +90,7 @@
 								</div>
 							</div>
 							<div class="product-content">
-								<h3 class="title"><a href="#">{{$data->nama_barang}}</a></h3>
+								<h3 class="title"><a href="{{ url('pesan', $data->id) }}">{{$data->nama_barang}}</a></h3>
 								<span class="price">Rp. {{ number_format($data->harga)}}</span>
 							</div>
 						</div>

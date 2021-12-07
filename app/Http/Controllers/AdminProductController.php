@@ -43,11 +43,11 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Kategori ID','name'=>'kategori_id','type'=>'select','validation'=>'required','width'=>'col-sm-9','dataenum'=>'1;2'];
-			$this->form[] = ['label'=>'Nama Product','name'=>'nama_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','placeholder'=>'Masukkan Nama Product'];
+			$this->form[] = ['label'=>'Nama Product','name'=>'nama_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-9','placeholder'=>'Masukkan Nama Product'];
 			$this->form[] = ['label'=>'Keterangan','name'=>'keterangan','type'=>'text','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Keterangan Product'];
-			$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Harga Product'];
-			$this->form[] = ['label'=>'Stok','name'=>'stok','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Stok Product'];
-			$this->form[] = ['label'=>'Berat','name'=>'berat','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Berat Product'];
+			$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-9','placeholder'=>'Masukkan Harga Product'];
+			$this->form[] = ['label'=>'Stok','name'=>'stok','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-9','placeholder'=>'Masukkan Stok Product'];
+			$this->form[] = ['label'=>'Berat','name'=>'berat','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-9','placeholder'=>'Masukkan Berat Product'];
 			$this->form[] = ['label'=>'Gambar1','name'=>'gambar1','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Gambar2','name'=>'gambar2','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
@@ -55,11 +55,11 @@
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'Kategori ID','name'=>'kategori_id','type'=>'select','validation'=>'required','width'=>'col-sm-9','dataenum'=>'1;2'];
-			//$this->form[] = ['label'=>'Nama Barang','name'=>'nama_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Keterangan','name'=>'keterangan','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			//$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Stok','name'=>'stok','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Berat','name'=>'berat','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Nama Product','name'=>'nama_barang','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10','placeholder'=>'Masukkan Nama Product'];
+			//$this->form[] = ['label'=>'Keterangan','name'=>'keterangan','type'=>'text','validation'=>'required','width'=>'col-sm-9','placeholder'=>'Masukkan Keterangan Product'];
+			//$this->form[] = ['label'=>'Harga','name'=>'harga','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Harga Product'];
+			//$this->form[] = ['label'=>'Stok','name'=>'stok','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Stok Product'];
+			//$this->form[] = ['label'=>'Berat','name'=>'berat','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','placeholder'=>'Masukkan Berat Product'];
 			//$this->form[] = ['label'=>'Gambar1','name'=>'gambar1','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
 			//$this->form[] = ['label'=>'Gambar2','name'=>'gambar2','type'=>'upload','validation'=>'required','width'=>'col-sm-9'];
 			# OLD END FORM

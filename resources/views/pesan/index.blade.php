@@ -54,14 +54,21 @@
 											@csrf
 												<input type="number" name="jumlah" class="form-control" required="" min="1" value="1">
 												@if(!empty(Auth::user()->id))
-
-												<button type="submit" class="btn btn-dark mt-3">Add to Cart
+													@if($product->stok==0)
+														<button type="" class="btn btn-dark mt-3 disabled">Stok Habis
+													@else
+														<button type="submit" class="btn btn-dark mt-3">Add to Cart
+													@endif
 													
 												</button>
 												@else
-												<a href="{{ route('login') }}">
-													<button type="button" class="btn btn-dark mt-3">Add to Cart</button>
-												</a>
+													@if($product->stok==0)
+														<button type="" class="btn btn-dark mt-3 disabled">Stok Habis
+													@else
+														<a href="{{ route('login') }}">
+															<button type="button" class="btn btn-dark mt-3">Add to Cart</button>
+														</a>
+													@endif
 												@endif
 											</form>
 										</td>

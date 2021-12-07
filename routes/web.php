@@ -63,6 +63,11 @@ Route::get('/read','PesanController@read');
 Route::post('/check_out/update/{id}','PesanController@update')->name('check_out/update');
 Route::get('/pesan/pesanan/{id}','PesanController@pesanan')->name('pesan/pesanan');
 Route::get('/pesan/pesanan/{id}','PesanController@cart');
+Route::get('/province','PesanController@getProvince')->name('/province');
+Route::get('province/{province_id}/city','PesanController@getCity')->name('province/{province_id}/city');
+Route::get('get-city','PesanController@getCity')->name('getCity');
+Route::get('/list_city/{province_id}','PesanController@listCity');
+Route::get('/list_subdistrict/{city_id}','PesanController@listSubdistrict');
 
 
 // DetailController
@@ -77,7 +82,7 @@ Route::post('/profil/update/{id}','ProfilController@update');
 // HistoryController
 Route::get('history','HistoryController@index');
 Route::get('/history/index','HistoryController@index')->name('history');
-Route::get('/history/store','HistoryController@store');
+Route::get('/history/store/{id}','HistoryController@store');
 Route::get('/history/edit/{id}','HistoryController@edit');
 Route::post('/history/update/{id}','HistoryController@update');
 // Route::get('/pesan/check_out',function(){

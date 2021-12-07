@@ -7,6 +7,9 @@ use App\Product;
 use App\Keranjang;
 use App\Checkout;
 use App\Kategori;
+use App\Province;
+use App\City;
+use App\Districts;
 use Auth;
 use SweetAlert;
 use Carbon\Carbon;
@@ -45,10 +48,24 @@ class PesanController extends Controller
         // $product = Product::where('id',$id)->first();
         $keranjang = Keranjang::where('id',$id)->first();
         $checkout = Checkout::where('id',$id)->first();
+        $provinces = Province::all();
+        $subdistricts = Districts::all();
 
-        return view('pesan.pesanan', ['product' => $product, 'keranjang' => $keranjang, 'checkout' => $checkout]);
+        return view('pesan.pesanan', ['product' => $product, 'keranjang' => $keranjang, 'checkout' => $checkout, 'provinces' => $provinces, 'subdistricts' => $subdistricts]);
     }
 
+    public function listCity($province_id){
+
+        $data = \DB::table('cities')->where('province_id',$province_id)->get();
+        return response()->json($data);
+    }
+
+    public function listSubdistrict($city_id){
+        $list = \DB::table('subdistricts')->where('city_id',$city_id)->get();
+        return response()->json($list);
+    }
+
+    
     public function pesanan($id)
     {
         $data['keranjang']=Keranjang::find($id);

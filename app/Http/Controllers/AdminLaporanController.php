@@ -17,7 +17,7 @@
 			$this->button_table_action = true;
 			$this->button_bulk_action = true;
 			$this->button_action_style = "button_icon";
-			$this->button_add = true;
+			$this->button_add = false;
 			$this->button_edit = true;
 			$this->button_delete = true;
 			$this->button_detail = true;
@@ -44,10 +44,10 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Full Name','name'=>'fullname','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Alamat','name'=>'kabupaten','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Alamat','name'=>'kabupaten','type'=>'text','validation'=>'required|integer|min:0','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Nama Product','name'=>'nama_barang','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Jumlah Beli','name'=>'jumlah','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah_harga','type'=>'number','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Jumlah Harga','name'=>'jumlah_harga','type'=>'number','validation'=>'required|date','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Metode','name'=>'metode','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Ongkir','name'=>'ongkir','type'=>'number','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Total Bayar','name'=>'total','type'=>'number','validation'=>'required','width'=>'col-sm-9'];

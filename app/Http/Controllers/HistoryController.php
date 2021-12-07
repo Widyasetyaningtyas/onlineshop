@@ -8,6 +8,7 @@ use App\Keranjang;
 use App\Kategori;
 use App\Checkout;
 use App\User;
+use App\Province;
 use Auth;
 class HistoryController extends Controller
 {
@@ -19,9 +20,10 @@ class HistoryController extends Controller
     public function index(Request $request)
     {
         $checkout = Checkout::where('user_id', Auth::user()->id)->get();
+        $provinces=Province::all();
         // $checkout->bukti_pembayaran = $request->bukti_pembayaran;
         // $checkout->save();
-        return view('history.index', compact('checkout'));
+        return view('history.index', compact('checkout','provinces'));
         // $data['keranjang']=Keranjang::find($id);
         // return view('history.index',$data);
     }
@@ -42,29 +44,48 @@ class HistoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
+        
         $product = Product::where('id',$id)->first();
+        // $checkout = Checkout::get('jumlah');
+        $keranjang = Keranjang::get('status');
 
-        $checkout = new Checkout;
-        $checkout->user_id = Auth::user()->id;
-        $checkout->kategori_id = $request->input_kategori_id;
-        $checkout->product_id = $request->input_product_id;
-        $checkout->fullname = $request->fullname;
-        $checkout->provinsi = $request->provinsi;
-        $checkout->kabupaten = $request->kabupaten;
-        $checkout->kecamatan = $request->kecamatan;
-        $checkout->alamat_rumah = $request->alamat_rumah;
-        $checkout->no_hp = $request->no_hp;
-        $checkout->metode = $request->metode;
-        $checkout->nama_barang = $request->input_nama_barang;
-        $checkout->harga = $request->input_harga;
-        $checkout->ongkir = $request->input_ongkir;
-        $checkout->status = "Not Yet Paid";
-        $checkout->jumlah = $request->input_jumlah;
-        $checkout->jumlah_harga = $request->input_jumlah_harga;
-        $checkout->total = $request->input_total;
-        $checkout->save();
+        $checkout=Checkout::create([
+            'user_id' => Auth::user()->id,
+            'kategori_id' => $request->input_kategori_id,
+            'product_id' => $request->input_product_id,
+            'fullname' => $request->fullname,
+            'provinsi' => $request->provinsi,
+            'kabupaten' => $request->kabupaten,
+            'kecamatan' => $request->kecamatan,
+            'alamat_rumah' => $request->alamat_rumah,
+            'no_hp' => $request->no_hp,
+            'metode' => $request->metode,
+            'nama_barang' => $request->nama_barang,
+            'harga' => $request->input_harga,
+            'ongkir' => $request->input_ongkir,
+            'status' => "Not Yet Paid",
+            'jumlah' => $request->input_jumlah,
+            'jumlah_harga' => $request->input_jumlah_harga,
+            'total' => $request->input_total,
+
+        ]);
+        
+        Keranjang::where('id',$id)->update(['status' => 1]);
+
+        $product->update([
+            'stok' => $product->stok - $checkout->jumlah,
+        ]);
+
+
+        // $keranjang = Keranjang::where('id', $id)->first();
+        // $keranjang->update([
+        //     'status' =>'tada'
+        // ]);
+
+
+        
 
         // $checkout = Checkout::where('id', $id)->get();
         // foreach ($checkout as $checkout) {
